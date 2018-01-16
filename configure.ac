@@ -24,6 +24,7 @@ AC_CONFIG_FILES([Makefile
                  src/app/Makefile
                  src/Makefile
                  src/lib/gpio/Makefile
+                 src/lib/tcp/Makefile
                  src/domoticz/Makefile])
 
 AC_OUTPUT

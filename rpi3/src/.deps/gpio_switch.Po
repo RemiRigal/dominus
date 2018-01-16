@@ -1,0 +1,139 @@
+gpio_switch.o: gpio_switch.c \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/stdlib.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/features.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/uClibc_config.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/sys/cdefs.h \
+ /root/buildroot-2017.08/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabihf/6.4.0/include/stddef.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/waitflags.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/waitstatus.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/endian.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/endian.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/byteswap.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/byteswap.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/byteswap-common.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/types.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/wordsize.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/typesizes.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/byteswap-16.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/sys/types.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/time.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/sys/select.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/select.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/sigset.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/time.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/sys/sysmacros.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/pthreadtypes.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/alloca.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/stdio.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/uClibc_stdio.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/wchar.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/wchar.h \
+ /root/buildroot-2017.08/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabihf/6.4.0/include/stdarg.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/stdio_lim.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/errno.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/errno.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/linux/errno.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/asm/errno.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/asm-generic/errno.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/asm-generic/errno-base.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/fcntl.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/fcntl.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/string.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/unistd.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/posix_opt.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/uClibc_posix_opt.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/environments.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/confname.h \
+ /root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/getopt.h
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/stdlib.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/features.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/uClibc_config.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/sys/cdefs.h:
+
+/root/buildroot-2017.08/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabihf/6.4.0/include/stddef.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/waitflags.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/waitstatus.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/endian.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/endian.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/byteswap.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/byteswap.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/byteswap-common.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/types.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/wordsize.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/typesizes.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/byteswap-16.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/sys/types.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/time.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/sys/select.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/select.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/sigset.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/time.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/sys/sysmacros.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/pthreadtypes.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/alloca.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/stdio.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/uClibc_stdio.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/wchar.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/wchar.h:
+
+/root/buildroot-2017.08/output/host/lib/gcc/arm-buildroot-linux-uclibcgnueabihf/6.4.0/include/stdarg.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/stdio_lim.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/errno.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/errno.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/linux/errno.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/asm/errno.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/asm-generic/errno.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/asm-generic/errno-base.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/fcntl.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/fcntl.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/string.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/unistd.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/posix_opt.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/uClibc_posix_opt.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/environments.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/confname.h:
+
+/root/buildroot-2017.08/output/host/arm-buildroot-linux-uclibcgnueabihf/sysroot/usr/include/bits/getopt.h:

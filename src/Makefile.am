@@ -1,3 +1,5 @@
 MAINTAINERCLEANFILES = Makefile.in
 
-SUBDIRS = domoticz
+SUBDIRS = lib/gpio \
+          app \
+          domoticz

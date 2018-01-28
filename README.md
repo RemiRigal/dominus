@@ -1,18 +1,33 @@
 # DOMINUS
 
-TO DO
+The aim of this project is to create nearly from scratch our own operating system and to use it on a raspberry pi to exectute some simple tasks. 
+Here the task consits on switching a LED on/off when clicking on a domoticz switch, by the use of a relay.
 
 ## Src
 
-This folder contains an example for autotools use in the folder domoticz.
-In order to compile it, run:
+This folder contains our sources for the project. Here are the different folders :
 
-- $ ./autogen.sh
-- $ ./configure
-- $ make
+* app contains the main programs which start the application
+
+* domoticz contains the example create_sensor which create a virtual sensor on domoticz
+
+* lib contains the following libraries :
+    * gpio which contains the gpio_switch library for the creation and control of the gpios
+
+* scripts contains the following shells :
+    * switch_off and switch_on which calls the gpio_switch library to control the LED
 
 
-## Dockerfile
+## Relay's Schematics  
+
+Here is the relay schematics of the connections to the raspberry pi.
+
+<p align="center">
+  <img src="https://github.com/RemiRigal/dominus/tree/PCMR/img/relay_schematics.png" width="350" title="Relay connections schema">
+</p>
+
+
+## Docker
 
 This file allows you to create an image based on a debian image, and that automatically download and compile the buildroot for the RPi3.
 

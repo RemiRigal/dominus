@@ -8,51 +8,80 @@
 #include <netinet/in.h>
 #include <netdb.h>
 #include <signal.h>
+#include <netdb.h>
 #include <arpa/inet.h>
 
-int socket_RV;
+int socket_service;
+int tcp_server;
+
+struct sockaddr_in adr;
+socklen_t lgadresse;
 
 void signals_handler(int signal_number)
 {
-	close(socket_RV);
+    close(socket_service);
+    close(tcp_server);
 	fflush(stdout);
 	printf("\nClosed cleanly\n");
+    exit(1);
 }
 
-void listener(char* IP, int port)
+int init_server(int port)
 {
-	//struct hostent *hote;
-	struct sockaddr_in adr;
+	int socket_RV;
+	int socket_service;
 
-	if( (socket_RV=socket(AF_INET, SOCK_STREAM, 0)) == -1 )
+	if ((socket_RV = socket(AF_INET, SOCK_STREAM, 0)) == -1)
 	{
 		perror("Socket RV failure");
 		exit(1);
 	}
-	
-	adr.sin_addr.s_addr = inet_addr(IP);
+
 	adr.sin_family = AF_INET;
 	adr.sin_port = htons(port);
+	adr.sin_addr.s_addr = htonl(INADDR_ANY);
 
-/*
-	hote = gethostbyname(name);
-	bcopy(hote->h_addr, &adr.sin_addr.s_addr, hote->h_length);
-*/
-
-	if ( connect(socket_RV,(struct sockaddr *)&adr, sizeof(adr))==-1 )
+	if (bind(socket_RV, (struct sockaddr *) &adr, sizeof(adr))==-1)
 	{
-		perror("Connection failure");
+		perror("Binding failure");
+		exit(1);
+	}			
+
+	if (listen(socket_RV,1)==-1)
+	{
+		perror("Listening failure");
 		exit(1);
 	}
 
+    return socket_RV;
+}
+
+void start_server(int port)
+{
+    tcp_server = init_server(port); 
+    do
+    {
+        socket_service = accept(tcp_server,(struct sockaddr *)&adr, &lgadresse);
+
+        // Listening
+	    char msg;
+        do
+	    {
+		    msg = EOF;
+		    recv(socket_service, &msg, 1, 0);
+		    putchar(msg);
+	    } while (msg!=EOF);
+
+        close(socket_service);
+    } while (1);
 }
 
 int main(int argc, char *argv[]) {
 
 	// Check correct use and update parameters
-    if (argc != 3)
+    if (argc != 2)
     {
-        printf("Listen on a TCP server.\nNeeded 2 arguments but %d given.\nUse this way -> ./listener IP Port\n", argc-1);
+        printf("Host a TCP server.\nNeeded 1 argument but %d given.\nUse this way -> ./listener Port\n", argc-1);
         return EXIT_FAILURE;
     }
 
@@ -66,20 +95,7 @@ int main(int argc, char *argv[]) {
     sigaction(SIGINT, & action, NULL);
     // END SIGACTION
 
-    // Server client
-    listener(argv[1], atoi(argv[2]));
-
-    // Listening
-	char msg;
-
-	do
-	{
-		msg = EOF;
-		read(socket_RV, &msg, 1);
-		putchar(msg);
-	} while (msg!=EOF);
-
-	close(socket_RV);
+    start_server(atoi(argv[1]));
 
 	return 0;
 }

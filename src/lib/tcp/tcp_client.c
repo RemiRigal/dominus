@@ -4,69 +4,68 @@
 #include <stdio.h>
 #include <stdlib.h> /* pour exit */
 #include <strings.h> /* pour bcopy */
+#include <string.h>
 #include <errno.h>
 #include <netinet/in.h>
 #include <netdb.h>
 #include <signal.h>
+#include <netdb.h>
+#include <arpa/inet.h>
 
-int server(int port)
+int socket_RV;
+
+void connect_to_server(char* IP, int port)
 {
-	int socket_RV;
-	int socket_service;
-
+	//struct hostent *hote;
 	struct sockaddr_in adr;
-	socklen_t lgadresse;
 
-	if((socket_RV=socket(AF_INET, SOCK_STREAM, 0)) == -1)
+	if ((socket_RV = socket(AF_INET, SOCK_STREAM, 0)) == -1 )
 	{
 		perror("Socket RV failure");
 		exit(1);
 	}
+	
+	adr.sin_addr.s_addr = inet_addr(IP);
+	adr.sin_family = AF_INET;
+	adr.sin_port = htons(port);
 
-	adr.sin_family=AF_INET;
-	adr.sin_port=htons(port);
-	adr.sin_addr.s_addr = htonl(INADDR_ANY);
+/*
+	hote = gethostbyname(name);
+	bcopy(hote->h_addr, &adr.sin_addr.s_addr, hote->h_length);
+*/
 
-	if (bind(socket_RV, (struct sockaddr *) &adr, sizeof(adr))==-1)
+	if ( connect(socket_RV,(struct sockaddr *)&adr, sizeof(adr))==-1 )
 	{
-		perror("Binding failure");
-		exit(1);
-	}			
-
-	if (listen(socket_RV,1)==-1)
-	{
-		perror("Listening failure");
+		perror("Connection failure");
 		exit(1);
 	}
-	
-	// Wait for client
-	socket_service = accept(socket_RV,(struct sockaddr *)&adr, &lgadresse);
-	close(socket_RV);
+}
 
-	return socket_service;
+void send_remote_message(char* IP, int port, char* message)
+{
+    // Server host
+    connect_to_server(IP, port);
+
+	// Sending msg
+    char msg;
+    //do 
+    //{
+    //    msg = getchar();
+    //    send(socket_RV, &msg, 1, 0);
+    //} while (msg != EOF);
+	send(socket_RV, message, strlen(message), 0);
+    close(socket_RV);
 }
 
 int main(int argc, char *argv[])
 {	
-    if (argc != 2)
+    if (argc != 4)
     {
-        printf("Host a TCP server.\nNeeded 1 arguments but %d given.\nUse this way -> ./listener Port\n", argc-1);
+        printf("Send a message to a TCP server.\nNeeded 3 arguments but %d given.\nUse this way -> ./client Ip Port Message\n", argc-1);
         return EXIT_FAILURE;
     }
-
-	int socket_service;
 	
-	// Server host
-	socket_service = server(atoi(argv[1]));
-
-	// Sending msg
-	char msg;
-
-	do
-	{
-		msg = getchar();
-		write(socket_service, &msg, 1);
-	} while (msg!=EOF);
+	send_remote_message(argv[1], atoi(argv[2]), argv[3]);
 
 	return 0;
 }

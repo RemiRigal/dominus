@@ -2,6 +2,7 @@
 
 The aim of this project is to create nearly from scratch our own operating system and to use it on a raspberry pi to exectute some simple tasks. 
 Here the task consits on switching a LED on/off when clicking on a domoticz switch, by the use of a relay.
+To do so, TCP client and server are implemented, domoticz is the client and the raspberry is the server, waiting for commands.
 
 ## Src
 
@@ -13,17 +14,18 @@ This folder contains our sources for the project. Here are the different folders
 
 * lib contains the following libraries :
     * gpio which contains the gpio_switch library for the creation and control of the gpios
+    * tcp which contains the tcp_server and tcp_client for the communication between domoticz and the raspberry pi
 
 * scripts contains the following shells :
     * switch_off and switch_on which calls the gpio_switch library to control the LED
 
 
-## Relay's Schematics  
+## Relay's Implementation  
 
 Here is the relay schematics of the connections to the raspberry pi.
 
 <p align="center">
-  <img src="https://github.com/RemiRigal/dominus/blob/PCMR/img/relay_schematics.png" width="350" title="Relay connections schema">
+  <img src="https://github.com/RemiRigal/dominus/blob/PCMR/img/relay_schematics.png" width="700" title="Relay connections schema">
 </p>
 
 
@@ -55,6 +57,3 @@ After that, you can create a docker container from the image by running :
 
 The image for the sdcard can be found in `/root/buildroot-2017.08/outputs/image`. 
 You can also copy it by running :
-
-		docker cp <docker_ID>:/root/buildroot-2017.08/output/images/sdcard.img .
-

@@ -23,7 +23,7 @@ This folder contains our sources for the project. Here are the different folders
 Here is the relay schematics of the connections to the raspberry pi.
 
 <p align="center">
-  <img src="https://github.com/RemiRigal/dominus/tree/PCMR/img/relay_schematics.png" width="350" title="Relay connections schema">
+  <img src="https://github.com/RemiRigal/dominus/blob/PCMR/img/relay_schematics.png" width="350" title="Relay connections schema">
 </p>
 
 

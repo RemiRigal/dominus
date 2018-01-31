@@ -1,9 +1,8 @@
 #ifndef tcp_server_h__
 #define tcp_server_h__
 
-int signals_handler(int signal_number);
 int init_server(int port);
-void start_server(int port);
+char get_command_from_client(int tcp_server);
  
 #endif  // tcp_server_h__
 

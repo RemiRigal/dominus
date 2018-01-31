@@ -2,8 +2,8 @@
 
 The aim of this project is to create nearly from scratch our own operating system and to use it on a raspberry pi to exectute some simple tasks. 
 Here the task consits on switching a LED on/off when clicking on a domoticz switch, by the use of a relay.
-To do so, TCP client and server are implemented, domoticz is the client and the raspberry is the server, waiting for commands.
-
+To do so, TCP client and server are implemented, domoticz is the client and the raspberry is the server, waiting for commands.  
+Morever in a final step the domoticz client runs on a second raspberry pi and the two raspberry pis are communicating together. 
 
 ## Configuration
 

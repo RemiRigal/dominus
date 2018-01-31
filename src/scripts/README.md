@@ -15,3 +15,4 @@ Then reboot the system, the server is operational!
 ## Domoticz scripts
 
 The scripts `switch_on.sh` and `switch_off.sh` must be bind with a virtual switch from Domoticz. Therefore they must be placed into the `Domoticz/scripts` directory.  
+The IP addresses may be changed according to the host of the Dominus server. In this case, it's required to place the `dominus.sh` file in the `/etc/profile.d` directory on the client as well.
